@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ExamHub — منصة التقييم من أجل التعلم</title>
+<meta name="description" content="منصة تقييم سحابية ثنائية اللغة لتقييم طلاب الصف الثالث الإعدادي — بنك أسئلة متكامل، تصحيح تلقائي فوري، تغذية راجعة، وإحصائيات شاملة، تتسع لمئات الآلاف من الطلاب مجاناً.">
+<meta name="theme-color" content="#10b981">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ExamHub — منصة التقييم من أجل التعلم">
+<meta property="og:description" content="منصة تقييم سحابية ثنائية اللغة لتقييم طلاب الصف الثالث الإعدادي — تصحيح تلقائي فوري، تغذية راجعة، وإحصائيات شاملة.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -79,7 +85,7 @@ body{background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-we
 .nav-actions{display:flex;gap:10px}
 
 /* Hero */
-.hero{padding:80px 24px 50px;text-align:center;max-width:960px;margin:0 auto;position:relative}
+.hero{padding:80px 24px 50px;text-align:center;max-width:960px;margin:0 auto;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,var(--primary-glow) 0%,transparent 70%);opacity:.5;z-index:-1;pointer-events:none}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;background:rgba(16,185,129,.1);color:var(--primary-dark);font-size:13px;font-weight:700;margin-bottom:24px;border:1px solid rgba(16,185,129,.2)}
 .hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px var(--primary);animation:pulse 2s infinite}
@@ -100,6 +106,33 @@ body{background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-we
 .feature-card:hover::before{opacity:1}
 .feature-num{width:48px;height:48px;border-radius:14px;background:var(--gradient-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;margin-bottom:14px;box-shadow:0 6px 16px var(--primary-glow);position:relative;z-index:1}
 .feature-text{font-size:15px;line-height:1.75;color:var(--text-soft);font-weight:500;position:relative;z-index:1}
+.feature-title{font-size:16px;font-weight:800;color:var(--text);margin-bottom:7px;position:relative;z-index:1;line-height:1.45;letter-spacing:-.1px}
+.feature-desc{font-size:14px;line-height:1.7;color:var(--text-soft);font-weight:500;position:relative;z-index:1}
+
+/* Timeline */
+.timeline{padding:30px 24px 70px;max-width:1100px;margin:0 auto}
+.timeline-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.timeline-phase{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.timeline-phase:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:rgba(16,185,129,.3)}
+.timeline-phase::before{content:'';position:absolute;top:0;right:0;left:0;height:5px;background:var(--gradient-primary)}
+.timeline-phase.phase-2::before{background:var(--gradient-gold)}
+.timeline-phase-head{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-top:4px}
+.timeline-phase-num{width:44px;height:44px;border-radius:12px;background:var(--gradient-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;box-shadow:0 6px 16px var(--primary-glow);flex-shrink:0}
+.timeline-phase.phase-2 .timeline-phase-num{background:var(--gradient-gold);box-shadow:0 6px 16px rgba(245,158,11,.35)}
+.timeline-phase-title{font-size:18px;font-weight:800;color:var(--text);line-height:1.3}
+.timeline-steps{display:flex;flex-direction:column;gap:12px}
+.timeline-step{display:flex;align-items:flex-start;gap:12px;padding:13px 15px;border-radius:11px;background:#f8fafc;border:1px solid var(--border);transition:all .2s}
+.timeline-step:hover{background:#fff;border-color:rgba(16,185,129,.3);box-shadow:var(--shadow-sm)}
+.timeline-step .step-dot{width:24px;height:24px;border-radius:50%;background:var(--primary-light);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+.timeline-step .step-text{font-size:14px;line-height:1.65;color:var(--text-soft);font-weight:600}
+.rollout-note{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:14px;line-height:1.7;background:#fffbeb;border:1px solid #fde68a;border-radius:11px;padding:12px 14px}
+.rollout-note strong{color:#92400e;font-weight:800}
+.rollout-flow{display:flex;flex-direction:column;gap:10px}
+.rollout-stage{display:flex;align-items:center;gap:12px;padding:12px 15px;border-radius:11px;background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;transition:all .2s}
+.rollout-stage:hover{transform:translateX(-3px);box-shadow:var(--shadow-sm)}
+.rollout-stage .stage-num{width:30px;height:30px;border-radius:9px;background:var(--gradient-gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0}
+.rollout-stage .stage-val{font-size:15px;font-weight:800;color:#92400e}
+.rollout-stage .stage-sub{font-size:12px;color:#b45309;font-weight:700;margin-right:auto;background:rgba(255,255,255,.6);padding:2px 9px;border-radius:999px}
 
 /* Demos */
 .demos{padding:30px 24px 80px;max-width:960px;margin:0 auto}
@@ -116,7 +149,7 @@ body{background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-we
 .demo-card.student .demo-icon{background:linear-gradient(135deg,#d1fae5,#a7f3d0);color:#047857}
 
 /* Footer */
-.landing-footer{padding:24px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--border);background:rgba(255,255,255,.5)}
+.landing-footer{margin-top:auto;padding:24px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--border);background:rgba(255,255,255,.5)}
 
 /* ═══════ Dashboard ═══════ */
 .dash-layout{display:flex;min-height:100vh;background:var(--bg)}
@@ -322,6 +355,8 @@ body{background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-we
   .demo-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr 1fr}
   .features-grid{grid-template-columns:1fr}
+  .timeline-grid{grid-template-columns:1fr}
+  .timeline-phase{padding:20px}
   .topbar h1{font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .topbar{gap:10px}
   .topbar-actions{gap:6px}
@@ -376,31 +411,108 @@ body{background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-we
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-num">١</div>
-        <div class="feature-text">منصة مجانية تتسع لتقييم حتى 100 ألف طالب متزامن دون أي تكلفة.</div>
+        <div class="feature-title">منصة ثنائية اللغة</div>
+        <div class="feature-desc">تدعم العربية والإنجليزية بواجهة كاملة. مصممة لتقييم طلاب الصف الثالث الإعدادي وقابلة للتوسع لصفوف أخرى.</div>
       </div>
       <div class="feature-card">
         <div class="feature-num">٢</div>
-        <div class="feature-text">تتيح للمعلم إعداد التقييمات بطريقتين: إدخال الأسئلة مباشرة أو الاختيار من بنك الأسئلة الخاص بالمنصة.</div>
+        <div class="feature-title">منصة سحابية بالكامل</div>
+        <div class="feature-desc">تتسع لـ ١٠٠ ألف طالب في وقت واحد، وقابلة للتوسع لأي عدد مجاناً دون أي اشتراكات.</div>
       </div>
       <div class="feature-card">
         <div class="feature-num">٣</div>
-        <div class="feature-text">تسمح للمعلم بتحديد عدد الأسئلة في كل تقييم، ودرجة كل سؤال، ومدة التقييم، وعدد مرات تكرار دخول الطالب في حالة الإعادة.</div>
+        <div class="feature-title">بنك أسئلة متكامل</div>
+        <div class="feature-desc">يدعم الصور والمعادلات الرياضية، ويتيح للمعلم إعداد التقييمات بإدخال الأسئلة مباشرة أو الاختيار من البنك.</div>
       </div>
       <div class="feature-card">
         <div class="feature-num">٤</div>
-        <div class="feature-text">يتم تصحيح التقييمات تلقائيًا فور انتهاء الطالب من الإجابة، مع عرض النتيجة بشكل فوري.</div>
+        <div class="feature-title">مرونة في إعداد الأسئلة</div>
+        <div class="feature-desc">تحديد عدد الأسئلة، درجاتها، المدة الزمنية، وعدد مرات إعادة المحاولة.</div>
       </div>
       <div class="feature-card">
         <div class="feature-num">٥</div>
-        <div class="feature-text">تعرض للطالب نقاط القوة والضعف في إجاباته، وتوجهه إلى نواتج التعلم التي ينبغي مراجعتها والتأكيد عليها.</div>
+        <div class="feature-title">تصحيح تلقائي وفوري</div>
+        <div class="feature-desc">تصحيح الإجابات فور الانتهاء من التقييم مع عرض النتيجة مباشرة.</div>
       </div>
       <div class="feature-card">
         <div class="feature-num">٦</div>
-        <div class="feature-text">للطالب: عرض إحصائيات تراكمية في كل مادة على حدة لمتابعة تطوره ومستواه الدراسي.</div>
+        <div class="feature-title">تغذية راجعة للطلاب</div>
+        <div class="feature-desc">عرض نقاط القوة والضعف، مع توجيه الطالب إلى نواتج التعلم التي يحتاج لمراجعتها.</div>
       </div>
       <div class="feature-card">
         <div class="feature-num">٧</div>
-        <div class="feature-text">للمعلم: عرض إحصائيات شاملة لجميع الطلبة ولكل مادة، مع تقارير مفصلة عن الأداء العام.</div>
+        <div class="feature-title">إحصائيات شاملة</div>
+        <div class="feature-desc">للطلاب (متابعة تطورهم في كل مادة) وللمعلمين (تقارير مفصلة عن أداء الطلاب والفصول والمواد).</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">٨</div>
+        <div class="feature-title">جاهزية فورية ودعم مستمر</div>
+        <div class="feature-desc">عند إطلاق المنصة وإتاحتها للطلاب، تصبح المنصة جاهزة للاستخدام فوراً مع دعم فني مستمر، وقابلة للتوسع لأي عدد من الطلاب.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline">
+    <div class="section-header">
+      <span class="section-eyebrow">خطة العمل</span>
+      <h2>الجدول الزمني لتجهيز المنصة</h2>
+      <p>من بناء البنية التحتية حتى التشغيل الكامل — مراحل واضحة لإطلاق المنصة على نحو تدريجي ومضبوط</p>
+    </div>
+    <div class="timeline-grid">
+      <!-- Phase 1 -->
+      <div class="timeline-phase">
+        <div class="timeline-phase-head">
+          <div class="timeline-phase-num">١</div>
+          <div class="timeline-phase-title">البرمجة والتجهيز</div>
+        </div>
+        <div class="timeline-steps">
+          <div class="timeline-step">
+            <div class="step-dot">١</div>
+            <div class="step-text">تجهيز البنية التحتية السحابية (أمازون) + إعداد قواعد البيانات.</div>
+          </div>
+          <div class="timeline-step">
+            <div class="step-dot">٢</div>
+            <div class="step-text">تجهيز المنصة بالكامل + اختبارات الأداء + التدريب.</div>
+          </div>
+          <div class="timeline-step">
+            <div class="step-dot">٣</div>
+            <div class="step-text">التشغيل التجريبي (عدد محدود من الطلاب) + التعديلات النهائية.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="timeline-phase phase-2">
+        <div class="timeline-phase-head">
+          <div class="timeline-phase-num">٢</div>
+          <div class="timeline-phase-title">انطلاق المنصة والتشغيل</div>
+        </div>
+        <div class="rollout-note">
+          كمرحلة أولى تستهدف المنصة طلاب الصف الثالث الإعدادي، والمقدر عددهم حسب الإحصائيات <strong>٣ ملايين طالب</strong>، على مراحل متتالية:
+        </div>
+        <div class="rollout-flow">
+          <div class="rollout-stage">
+            <div class="stage-num">١</div>
+            <div class="stage-val">١٠٬٠٠٠ طالب</div>
+            <div class="stage-sub">المرحلة الأولى</div>
+          </div>
+          <div class="rollout-stage">
+            <div class="stage-num">٢</div>
+            <div class="stage-val">١٠٠٬٠٠٠ طالب</div>
+            <div class="stage-sub">المرحلة الثانية</div>
+          </div>
+          <div class="rollout-stage">
+            <div class="stage-num">٣</div>
+            <div class="stage-val">٣٠٠ ألف طالب</div>
+            <div class="stage-sub">١٠٪ من الطلاب</div>
+          </div>
+          <div class="rollout-stage">
+            <div class="stage-num">٤</div>
+            <div class="stage-val">التوسع حتى ١٫٥ مليون طالب</div>
+            <div class="stage-sub">٥٠٪ من الطلاب</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
